@@ -7,6 +7,7 @@
        * Glowstone (which is bukkit-compatible)
        * Spigot (which is bukkit-compatible)
   -->
+  <property name="src.common" location="src/main/java/common"/>
   <property name="src.canary" location="src/main/java/canary"/>
   <property name="src.bukkit" location="src/main/java/bukkit"/>
 
@@ -73,6 +74,7 @@
            target="1.6" 
            destdir="${build}" 
            debug="true">
+      <src path="${src.common}"/>
       <src path="${src.canary}"/>
       <src path="${src.bukkit}"/>
       <classpath>
@@ -189,7 +191,7 @@ Walter Higgins
    </concat>      
   </target>
 
-  <target name="zip_js" depends="zip_lib, zip_modules, zip_plugins">
+  <target name="zip_js" depends="zip_lib, zip_modules, zip_plugins, zip_www">
   </target>
 
   <target name="copy-js" depends="gen-events-helper-canary,gen-events-helper-bukkit,init">
@@ -202,7 +204,7 @@ Walter Higgins
     <delete file="${build}/lib.zip"/>
     <zip destfile="${build}/lib.zip" 
          basedir="${dist}/js" 
-         excludes="modules/**, plugins/**,">
+         excludes="modules/**, plugins/**, www/**">
     </zip>
   </target>
 
@@ -217,7 +219,7 @@ Walter Higgins
     <delete file="${build}/modules.zip"/>
     <zip destfile="${build}/modules.zip" 
          basedir="${dist}/js" 
-         excludes="lib/**, plugins/**,">
+         excludes="lib/**, plugins/**, www/**">
     </zip>
   </target>
 
@@ -225,10 +227,18 @@ Walter Higgins
     <delete file="${build}/plugins.zip"/>
     <zip destfile="${build}/plugins.zip" 
          basedir="${dist}/js"
-         excludes="lib/**, modules/**">
+         excludes="lib/**, modules/**, www/**">
     </zip>
   </target>
   
+  <target name="zip_www" depends="copy-js">
+    <delete file="${build}/www.zip"/>
+    <zip destfile="${build}/www.zip" 
+         basedir="${dist}/js"
+         excludes="lib/**, modules/**, plugins/**">
+    </zip>
+  </target>
+	  
   <target name="package" depends="gendocs,zip_js,compile-plugins" description="generate the distribution" >
     <!-- ensure plugin.yml is always copied -->
     <delete file="${build}/plugin.yml" />
