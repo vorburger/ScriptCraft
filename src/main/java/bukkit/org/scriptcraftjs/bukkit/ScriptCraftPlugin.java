@@ -44,7 +44,7 @@ public class ScriptCraftPlugin extends JavaPlugin implements Listener
 			
             httpServer.start();
             this.getLogger().info(httpServer.getStartedLogMessage());
-            httpServer.openURL();
+            // httpServer.openURL();
 
 		} catch (Exception e) {
 			e.printStackTrace();

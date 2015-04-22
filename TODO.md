@@ -2,7 +2,6 @@
 
 [ ] Integrated js/plugins/blocklycraft (without Blockly in www/, yet)
      [ ] move main files from plugins/aldo_ben to modules/blocklycraft? or use another sub-folder?
-     [ ] file header, @author Lauro Canonica (?): Original author; Michael Vorburger: Clean-up for initial ScriptCraft Git contribution
 [ ] Web Server handles POST to update JS files, under fixed folder
      [ ] Bundle BlocklyCraft
      [ ] support Save, using POST instead of GET)
@@ -13,6 +12,8 @@
      [ ] TODO.md clean-up, squash
      [ ] Then Git squash, pull-request!
      [ ] Video, Blog, Tweet..
+
+[ ] How-to refresh() without restarting the web server? If figured out, then re-enable the commented out httpServer.openURL(); in *BOTH* ScriptCraftPlugin classes
 
 [ ] BlocklyCraft: Translate Italian-only blocks
 
@@ -33,4 +34,4 @@
 [ ] Integrated js/plugins/blocklycraft (without Blockly in www/, yet)
      [ ] copy 2-3 files, works! now showing in Git.
      [ ] remove hard-coded path.. avoid error on start-up
-     [ ] clean up files... 
+     [ ] cleaned up files much, formatting, header, etc. 

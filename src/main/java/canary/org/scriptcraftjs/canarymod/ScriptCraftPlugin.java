@@ -66,7 +66,7 @@ public class ScriptCraftPlugin extends Plugin implements PluginListener, Command
             
             httpServer.start();
             this.getLogman().info(httpServer.getStartedLogMessage());
-            httpServer.openURL();
+            // httpServer.openURL();
 
         }catch(Exception e){
             e.printStackTrace();
