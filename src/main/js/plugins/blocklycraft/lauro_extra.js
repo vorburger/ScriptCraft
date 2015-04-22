@@ -1,3 +1,9 @@
+/*************************************************************************
+ * Authors:
+ *  - Lauro Canonica: Original author (Devoxx4kids Lugano 2015.04)
+ *  - Michael Vorburger: Clean-up for initial ScriptCraft Git contribution
+ */
+
 var items = require('items');
 
 var ItemType = Packages.net.canarymod.api.inventory.ItemType;
