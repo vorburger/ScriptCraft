@@ -36,6 +36,7 @@ public class ScriptCraftPlugin extends Plugin implements PluginListener, Command
     @Override
     public void disable(){
         httpServer.stop();
+        this.getLogman().info("HTTP web server stopped");
         try { 
             ((Invocable)this.engine).invokeFunction("__onDisable", this.engine, this);
         }catch ( Exception e) {

@@ -40,14 +40,13 @@ command( 'spar', function( parameters, sender ) {
 
 var utils = require('utils');
 
-/* 'C:\\Users\\lauro\\Downloads\\CanaryMod-1.8.0-1.2.0-RC1\\scriptcraft\\plugins\\aldo_ben' */
-var scriptFolder = '/home/vorburger/dev/withDev/MinecraftVoxxedTicino/CanaryMod-1.8.0-1.2.0-RC1/scriptcraft/plugins/aldo_ben';
+var scriptFolder = 'scriptcraft/plugins/blocklycraft';
 var fileObject = new java.io.File(scriptFolder);
 
 function watchMyFiles(folder){
 		var names=folder.list();
 		for (var i=0; i<names.length; i++){
-			var fname=scriptFolder+"/"+names[i]; // "\\" instead of "/" on Win..
+			var fname=scriptFolder+"/"+names[i]; // TODO "\\" instead of "/" needed on Win, or OK? 
 			console.log('watching '+fname );
 			utils.watchFile(fname , function( fileModified ) { // refresh after any file modification
 				refresh();  
@@ -75,9 +74,3 @@ function fileWatcher() {
   setTimeout( fileWatcher, 5000 );
 };
 //fileWatcher();
-
-
-
-
-
-
