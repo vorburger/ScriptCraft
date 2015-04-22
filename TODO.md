@@ -1,7 +1,5 @@
 ## ToDo
 
-[ ] Integrated js/plugins/blocklycraft (without Blockly in www/, yet)
-     [ ] move main files from plugins/aldo_ben to modules/blocklycraft? or use another sub-folder?
 [ ] Web Server handles POST to update JS files, under fixed folder
      [ ] Bundle BlocklyCraft
      [ ] support Save, using POST instead of GET)
