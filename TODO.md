@@ -6,14 +6,18 @@
      [ ] git rm 127001_clientScript.js
      [ ] Lauro review.. test on Win, note my \ to / change, still works?
      [ ] TODO.md clean-up, squash
-     [ ] DOCUMENTATION, README.md
+     [ ] DOCUMENTATION, README.md incl. link to https://www.youtube.com/watch?v=cat5f-Hy16k
      [ ] Then Git squash, pull-request!
-     [ ] Video, Blog, Tweet..
+     [ ] Wait for merge of Pull Request
 
-[ ] How-to refresh() without restarting the web server? If figured out, then re-enable the commented out httpServer.openURL(); in *BOTH* ScriptCraftPlugin classes
-
+[ ] Video/s more, Blog, Tweet..
 [ ] BlocklyCraft: Translate Italian-only blocks
-
+[ ] announce it on https://groups.google.com/forum/#!forum/blockly
+[ ] get linked on https://blockly-games.appspot.com/about?lang=en
+[ ] Save using https://blockly-demo.appspot.com/static/demos/storage/index.html & https://developers.google.com/blockly/installation/cloud-storage
+[ ] How-to refresh() without restarting the web server? If figured out, then re-enable the commented out httpServer.openURL(); in *BOTH* ScriptCraftPlugin classes
+[ ] https://github.com/maxogden/javascript-editor
+[ ] support Java (Xtend?) instead of JavaScript coding (use Hotea)
 [ ] Maven build instead of build.xml?
 
 

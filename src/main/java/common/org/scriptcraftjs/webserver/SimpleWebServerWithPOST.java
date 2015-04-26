@@ -20,7 +20,9 @@ import fi.iki.elonen.SimpleWebServer;
 public class SimpleWebServerWithPOST extends SimpleWebServer {
 
 	private static final String CONTENT_LENGTH = "content-length";
-
+	
+	private static final String FILE_SUFFIX = "clientScript.js";
+	
 	private final File httpPostDirectory;
 
 	public SimpleWebServerWithPOST(String host, int port, File wwwroot, File httpPostDirectory, boolean quiet) {
@@ -33,15 +35,15 @@ public class SimpleWebServerWithPOST extends SimpleWebServer {
 			return super.serve(session);
 		} // else: handle a POST now...
 		
-		if (session.getUri().length() < 2) {
-            return createResponse(Response.Status.BAD_REQUEST, NanoHTTPD.MIME_PLAINTEXT, "URI too short to POST to: " + session.getUri());
-		}
-        String uri = session.getUri().substring(1);
-        // TODO for real security, probably need to handle (un)escaped / etc. here as well?
-        if (uri.contains("/") || uri.contains("\\") || uri.contains("..")) {
-        	// throw new IllegalArgumentException("Invalid POST URI: " + uri);
-            return createResponse(Response.Status.FORBIDDEN, NanoHTTPD.MIME_PLAINTEXT, "Invalid POST URI: " + uri);
-        }
+//        if (session.getUri().length() < 2) {
+//            return createResponse(Response.Status.BAD_REQUEST, NanoHTTPD.MIME_PLAINTEXT, "URI too short to POST to: " + session.getUri());
+//        }
+//        String uri = session.getUri().substring(1);
+//        // TODO for real security, probably need to handle (un)escaped / etc. here as well?
+//        if (uri.contains("/") || uri.contains("\\") || uri.contains("..")) {
+//            // throw new IllegalArgumentException("Invalid POST URI: " + uri);
+//            return createResponse(Response.Status.FORBIDDEN, NanoHTTPD.MIME_PLAINTEXT, "Invalid POST URI: " + uri);
+//        }
         
         Map<String, String> headers = session.getHeaders();
         if (!headers.containsKey(CONTENT_LENGTH)) {
@@ -49,7 +51,8 @@ public class SimpleWebServerWithPOST extends SimpleWebServer {
         }
         int size = Integer.parseInt(headers.get(CONTENT_LENGTH));
 
-        File file = new File(httpPostDirectory, uri);
+        String IP = headers.get("http-client-ip").replaceAll("[:.]", "");
+        File file = new File(httpPostDirectory, /*uri*/ IP + "_" + FILE_SUFFIX);
         InputStream is = session.getInputStream();
         try {
 			copy(is, size, file);
@@ -78,7 +81,7 @@ public class SimpleWebServerWithPOST extends SimpleWebServer {
 		    }
 		} finally {		
 	        safeClose(os);
-	        safeClose(is);
+	        // do *NOT* safeClose(is);
 		}
 	}
 }
