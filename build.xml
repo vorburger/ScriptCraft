@@ -239,7 +239,7 @@ Walter Higgins
     </zip>
   </target>
 	  
-  <target name="package" depends="gendocs,zip_js,compile-plugins" description="generate the distribution" >
+  <target name="package" depends="blockly,gendocs,zip_js,compile-plugins" description="generate the distribution" >
     <!-- ensure plugin.yml is always copied -->
     <delete file="${build}/plugin.yml" />
     <delete file="${build}/Canary.inf" />
@@ -271,5 +271,9 @@ Walter Higgins
     </delete>
     <mkdir dir="${minecraft.dir}/plugins" />
     <copy file="${dist}/${DSTAMP}/scriptcraft.jar" todir="${minecraft.dir}/plugins"/>
+  </target>
+	
+  <target name="blockly">
+  	<ant dir="src/main/js/www/blocklycraft/" />
   </target>
 </project>
