@@ -1,13 +1,12 @@
 ## ToDo
 
-[ ] Web Server handles POST to update JS files, under fixed folder
-     [ ] Bundle BlocklyCraft
-     [ ] support Save, using POST instead of GET)
+[ ] Bundle BlocklyCraft
 [ ] Prepare to release
      [ ] double check with Lauro where former plugins/utils.js now modules/utils/utils.js with watchFile() is originally from?!
      [ ] git rm 127001_clientScript.js
      [ ] Lauro review.. test on Win, note my \ to / change, still works?
      [ ] TODO.md clean-up, squash
+     [ ] DOCUMENTATION, README.md
      [ ] Then Git squash, pull-request!
      [ ] Video, Blog, Tweet..
 
@@ -29,7 +28,10 @@
       * Automatically opens web browser
 
 # 2015.04.22
-[ ] Integrated js/plugins/blocklycraft (without Blockly in www/, yet)
-     [ ] copy 2-3 files, works! now showing in Git.
-     [ ] remove hard-coded path.. avoid error on start-up
-     [ ] cleaned up files much, formatting, header, etc. 
+[X] Integrated js/plugins/blocklycraft (without Blockly in www/, yet)
+     [X] copy 2-3 files, works! now showing in Git.
+     [X] remove hard-coded path.. avoid error on start-up
+     [X] cleaned up files much, formatting, header, etc. 
+
+# 2015.04.26
+[X] Web Server handles POST to update JS files, under fixed folder, to later support Save from Blockly (using POST instead of GET)

@@ -454,7 +454,7 @@ public class SimpleWebServer extends NanoHTTPD {
     }
 
     // Announce that the file server accepts partial content requests
-    private Response createResponse(Response.Status status, String mimeType, String message) {
+    protected Response createResponse(Response.Status status, String mimeType, String message) {
         Response res = new Response(status, mimeType, message);
         res.addHeader("Accept-Ranges", "bytes");
         return res;

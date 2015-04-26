@@ -118,7 +118,7 @@ public abstract class NanoHTTPD {
         setAsyncRunner(new DefaultAsyncRunner());
     }
 
-    private static final void safeClose(Closeable closeable) {
+    protected static final void safeClose(Closeable closeable) {
         if (closeable != null) {
             try {
                 closeable.close();

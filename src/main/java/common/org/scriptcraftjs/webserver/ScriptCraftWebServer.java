@@ -4,7 +4,7 @@ import fi.iki.elonen.ServerRunner;
 
 
 /**
- * Web Server for ScriptCraft.
+ * Web Server for BlocklyCraft in ScriptCraft.
  * 
  * General HTTP server code that is not related to ScriptCraft (or BlocklyCraft) should go into the WebServer parent class. 
  * 
@@ -13,13 +13,14 @@ import fi.iki.elonen.ServerRunner;
 public class ScriptCraftWebServer extends WebServer {
 
 	private static final String SCRIPTCRAFT_WWW_DIRECTORY = "scriptcraft/www";
+	private static final String BLOCKLYCRAFT_POST_DIRECTORY = "scriptcraft/plugins/blocklycraft";
 
 	public ScriptCraftWebServer() {
-		super(SCRIPTCRAFT_WWW_DIRECTORY);
+		super(SCRIPTCRAFT_WWW_DIRECTORY, BLOCKLYCRAFT_POST_DIRECTORY);
 	}
 
-	public ScriptCraftWebServer(String wwwroot) {
-		super(wwwroot);
+	public ScriptCraftWebServer(String wwwroot, String httpPostDirectory) {
+		super(wwwroot, httpPostDirectory);
 	}
 
 	public String getStartedLogMessage() {
@@ -27,7 +28,7 @@ public class ScriptCraftWebServer extends WebServer {
 	}
 	
 	public static void main(String[] args) {
-		ScriptCraftWebServer webServer = new ScriptCraftWebServer("src/main/js/www");
+		ScriptCraftWebServer webServer = new ScriptCraftWebServer("src/main/js/www", "src/main/js/plugins/blocklycraft");
 		System.out.println(webServer.getStartedLogMessage());
 		webServer.openURL();
 		ServerRunner.executeInstance(webServer.createServer());

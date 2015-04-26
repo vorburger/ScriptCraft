@@ -29,14 +29,16 @@ public class WebServer {
 	private int port = 7070;
 
 	private final File wwwroot;
+	private final File httpPostDirectory;
 	private NanoHTTPD server;
 	
-	public WebServer(File wwwroot) {
+	public WebServer(File wwwroot, File httpPostDirectory) {
 		this.wwwroot = wwwroot;
+		this.httpPostDirectory = httpPostDirectory;
 	}
 
-	public WebServer(String wwwroot) {
-		this(new File(wwwroot));
+	public WebServer(String wwwroot, String httpPostDirectory) {
+		this(new File(wwwroot), new File(httpPostDirectory));
 	}
 
 	public void start() throws IOException {
@@ -56,7 +58,7 @@ public class WebServer {
 			port = Integer.parseInt(portSystemProperty);
 
 		boolean quiet = true;
-		return new SimpleWebServer(host, port, wwwroot, quiet);
+		return new SimpleWebServerWithPOST(host, port, wwwroot, httpPostDirectory, quiet);
 	}
 	
 	public void stop() {
