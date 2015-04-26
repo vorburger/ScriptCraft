@@ -26,10 +26,14 @@
 		<property name="blockly.zip.filename" value="3rd-party/google-blockly-master.zip"/>
 	    <get src="https://github.com/google/blockly/zipball/master" verbose="true" dest="${blockly.zip.filename}" skipexisting="true"/>
 		<unzip dest="3rd-party/google-blockly/" src="${blockly.zip.filename}">
+			 <patternset>
+				<!-- Just to keep scriptcraft.jar file size down.. we actually only need the demos/code, but none of the others -->
+		        <exclude name="*/demos/plane/**"/>
+		        <exclude name="*/tests/**"/>
+		    </patternset>
 			<mapper>
 				<cutdirsmapper dirs="1" />
 		    </mapper>
 		</unzip>
-		<!--<delete file="${blockly.zip.filename}" />-->
 	</target>	
 </project>

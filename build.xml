@@ -237,7 +237,8 @@ Walter Higgins
     <delete file="${build}/www.zip"/>
     <zip destfile="${build}/www.zip" 
          basedir="${dist}/js"
-         excludes="lib/**, modules/**, plugins/**">
+         excludes="lib/**, modules/**, plugins/**, www/blocklycraft/3rd-party/google-blockly-master.zip"
+    	 level="9">
     </zip>
   </target>
 	  
