@@ -1,12 +1,9 @@
 ## ToDo
 
-[ ] Bundle BlocklyCraft
 [ ] Prepare to release
      [ ] double check with Lauro where former plugins/utils.js now modules/utils/utils.js with watchFile() is originally from?!
-     [ ] git rm 127001_clientScript.js
      [ ] Lauro review.. test on Win, note my \ to / change, still works?
      [ ] TODO.md clean-up, squash
-     [ ] DOCUMENTATION, README.md incl. link to https://www.youtube.com/watch?v=cat5f-Hy16k
      [ ] Then Git squash, pull-request!
      [ ] Wait for merge of Pull Request
 
@@ -39,3 +36,5 @@
 
 # 2015.04.26
 [X] Web Server handles POST to update JS files, under fixed folder, to later support Save from Blockly (using POST instead of GET)
+[X] Bundled complete BlocklyCraft, as received in Lauro's ZIP - but complete separate 3rd-party from our code
+[X] Introduced it in README.md incl. link to https://www.youtube.com/watch?v=cat5f-Hy16k
