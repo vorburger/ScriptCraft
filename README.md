@@ -146,8 +146,7 @@ making it (also) a visual programming environment, and not only a text-based cod
 is web-based, and based on Google's Blockly (which was influenced by MIT's Scratch, which was inspired by
 Logo, the original "turtle graphics" educational programming language designed in 1967 equally at MIT.)
 
-http://localhost:7070/blocklycraft/index.html opens this intuitive editor, and this https://www.youtube.com/watch?v=cat5f-Hy16k
-video introduces you how to use it.
+[http://localhost:7070/blocklycraft/](http://localhost:7070/blocklycraft/index.html) opens this intuitive editor, and [this first video introduces](https://www.youtube.com/watch?v=cat5f-Hy16k) how to use it, [this video in Italian](https://www.youtube.com/watch?v=83I8DzWjnNQ) is from Devoxx4kids Ticino 2015, where [BlocklyMinecraft was born during a Hackergarten](https://www.flickr.com/photos/132694685@N07/16616720023/in/set-72157649797804723).
 
 
 # Docker 

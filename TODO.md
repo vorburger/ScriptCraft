@@ -7,6 +7,7 @@
      [ ] Then Git squash, pull-request!
      [ ] Wait for merge of Pull Request
 
+[ ] Create HTML version of MinecraftModdingIdeas_20150416.docx, link it as Help?
 [ ] Video/s more, Blog, Tweet..
 [ ] BlocklyCraft: Translate Italian-only blocks
 [ ] announce it on https://groups.google.com/forum/#!forum/blockly
