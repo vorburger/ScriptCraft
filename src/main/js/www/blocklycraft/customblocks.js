@@ -8,7 +8,7 @@
 
 
 	var objects = getObjNames(Blockly.Msg.OBJNAMES , [141, 142, 175, 81, 92, 54, 58, 61, 64, 65, 66, 68, 37, 46, 50, 51, 27]);    
-	var blocks = getObjNames(Blockly.Msg.OBJNAMES , [0, 1, 2, 3, 4, 8, 10, 11, 12, 13, 14, 15, 16, 17, 18, 20, 30, 49, 56, 73, 79, 80, 89, 129]);    
+	var blocks = getObjNames(Blockly.Msg.OBJNAMES , [0, 1, 2, 3, 4, 8, 10, 11, 12, 13, 14, 15, 16, 17, 18, 20, 30, 49, 55, 56, 73, 79, 80, 89, 129]);    
 
 
 Blockly.Blocks['box'] = {
@@ -81,17 +81,19 @@ Blockly.Blocks['drone_move'] = {
 	        .appendField(Blockly.Msg.M_MOUVEMENT);
 		    this.appendDummyInput()
 		        .appendField(new Blockly.FieldDropdown([
-		                                                ["su", "up()"], 
-		                                                ["giu", "down()"], 
-		                                                ["in avanti", "fwd()"], 
-		                                                ["in dietro", "back()"],
-		                                                ["destra", "right()"], 
-		                                                ["sinistra", "left()"],
-		                                                ["gira a destra", "turn()"],
-		                                                ["gira a sinistra", "turn(2)"],
-		                                                ["ritorna alla partenza", "move('start')"],
-		                                                ["salva questa partenza", "chkpt('start')"]
+		                                                [Blockly.Msg.M_MOUVEMENT_UP, "up()"], 
+		                                                [Blockly.Msg.M_MOUVEMENT_DOWN, "down()"], 
+		                                                [Blockly.Msg.M_MOUVEMENT_FWD, "fwd()"], 
+		                                                [Blockly.Msg.M_MOUVEMENT_BACK, "back()"],
+		                                                [Blockly.Msg.M_MOUVEMENT_RIGHT, "right()"], 
+		                                                [Blockly.Msg.M_MOUVEMENT_LEFT, "left()"],
+		                                                [Blockly.Msg.M_MOUVEMENT_TURN_RIGHT, "turn()"],
+		                                                [Blockly.Msg.M_MOUVEMENT_TURN_LEFT, "turn(2)"],
+		                                                [Blockly.Msg.M_MOUVEMENT_BACKTOSTART, "move('start')"],
+		                                                [Blockly.Msg.M_MOUVEMENT_SAVESTART, "chkpt('start')"]
 		                                               ]), "direction");
+		    
+		    
 		    this.setInputsInline(true);
 		    this.setPreviousStatement(true);
 		    this.setNextStatement(true);
@@ -128,16 +130,17 @@ Blockly.Blocks['spawner'] = {
 		        .appendField("Animali");
 		    this.appendDummyInput()
 		        .appendField(new Blockly.FieldDropdown([
-		                                                ["pipistrello", "Bat"], 
-		                                                ["pollo", "Chicken"], 
-		                                                ["mucca", "COW"], 
-		                                                ["maiale", "PIG"], 
-		                                                ["coniglio", "RABBIT"], 
-		                                                ["lupo", "WOLF"], 
-		                                                ["pecora", "Sheep"], 
-		                                                ["cavallo", "Horse"], 
-		                                                ["ocelot", "OCELOT"]]), "NAME");
-		    
+		                                                [Blockly.Msg.ANIMALS_BAT, "Bat"], 
+		                                                [Blockly.Msg.ANIMALS_CHICKEN, "Chicken"], 
+		                                                [Blockly.Msg.ANIMALS_COW, "COW"], 
+		                                                [Blockly.Msg.ANIMALS_PIG, "PIG"], 
+		                                                [Blockly.Msg.ANIMALS_RABBIT, "RABBIT"], 
+		                                                [Blockly.Msg.ANIMALS_WOLF, "WOLF"], 
+		                                                [Blockly.Msg.ANIMALS_SHEEP, "Sheep"], 
+		                                                [Blockly.Msg.ANIMALS_HORSE, "Horse"], 
+		                                                [Blockly.Msg.ANIMALS_OCELOT, "OCELOT"]
+		                                                ]), "NAME");
+
 		    
 		    this.setInputsInline(true);
 		    this.setPreviousStatement(true);
