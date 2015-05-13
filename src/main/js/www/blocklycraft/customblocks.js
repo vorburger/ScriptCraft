@@ -105,16 +105,14 @@ Blockly.Blocks['drone_tree'] = {
 		    this.setHelpUrl('http://www.example.com/');
 		    this.setColour(120);
 		    this.appendDummyInput()
-	        .appendField("Extra");
+	        .appendField(Blockly.Msg.M_SPECIALS);
 		    this.appendDummyInput()
 		        .appendField(new Blockly.FieldDropdown([
-		                                                ["quercia", "oak()"], 
-		                                                ["betulla", "birch()"], 
-		                                                ["mogano", "jungle()"], 
-		                                                ["abete", "spruce()"], 
-		                                                ["letto", "bed()"], 
-		                                                ["porta", "door( blocks.door_wood )"] 
+		                                                [Blockly.Msg.OAK, "oak()"], 
+		                                                [Blockly.Msg.BED, "bed()"], 
+		                                                [Blockly.Msg.DOOR, "door( blocks.door_wood )"] 
 		                                               ]), "direction");
+		    
 		    this.setInputsInline(true);
 		    this.setPreviousStatement(true);
 		    this.setNextStatement(true);
@@ -127,7 +125,7 @@ Blockly.Blocks['spawner'] = {
 		    this.setHelpUrl('http://www.example.com/');
 		    this.setColour(20);
 		    this.appendDummyInput()
-		        .appendField("Animali");
+		        .appendField(Blockly.Msg.M_ANIMALS);
 		    this.appendDummyInput()
 		        .appendField(new Blockly.FieldDropdown([
 		                                                [Blockly.Msg.ANIMALS_BAT, "Bat"], 
@@ -154,12 +152,12 @@ Blockly.Blocks['circle'] = {
 		    this.setHelpUrl('http://www.example.com/');
 		    this.setColour(260);
 		    this.appendDummyInput()
-		        .appendField("Cerchio");
+		        .appendField(Blockly.Msg.CIRCLE);
 		    this.appendDummyInput()
 		        .appendField(new Blockly.FieldDropdown([["vuoto", "0"], ["pieno", " "]]), "fill");
 		    this.appendValueInput("radius")
 		        .setCheck("Number")
-		        .appendField("raggio");
+		        .appendField(Blockly.Msg.RADIUS);
 		    this.appendDummyInput()
         .appendField(new Blockly.FieldDropdown(blocks), "material");
 		    this.setInputsInline(true);
@@ -174,17 +172,17 @@ Blockly.Blocks['rectangle'] = {
 		    this.setHelpUrl('http://www.example.com/');
 		    this.setColour(260);
 		    this.appendDummyInput()
-		        .appendField("Rettangolo");
+		        .appendField(Blockly.Msg.RECTANGLE);
 		    this.appendDummyInput()
-		        .appendField(new Blockly.FieldDropdown([["vuoto", "0"], ["pieno", " "]]), "fill");
+		        .appendField(new Blockly.FieldDropdown([[Blockly.Msg.EMPTY, "0"], [Blockly.Msg.FULL, " "]]), "fill");
 		    this.appendValueInput("width")
 		        .setCheck("Number")
-		        .appendField("larghezza");
+		        .appendField(Blockly.Msg.WIDTH);
 		    this.appendValueInput("lenght")
 		        .setCheck("Number")
-		        .appendField("lunghezza");
+		        .appendField(Blockly.Msg.LENGTH);
 		    this.appendDummyInput()
-	        .appendField("materiale");
+	        .appendField(Blockly.Msg.M_MATERIAL);
 		    this.appendDummyInput()
 	        .appendField(new Blockly.FieldDropdown(blocks), "material");
 		    this.setInputsInline(true);
@@ -221,15 +219,15 @@ Blockly.Blocks['alternator'] = {
 		    this.setHelpUrl('http://www.example.com/');
 		    this.setColour(260);
 		    this.appendDummyInput()
-		        .appendField("Rettangolo");
+		        .appendField(Blockly.Msg.RECTANGLE);
 		    this.appendValueInput("width")
 		        .setCheck("Number")
-		        .appendField("larghezza");
+		        .appendField(Blockly.Msg.WIDTH);
 		    this.appendValueInput("lenght")
 	        .setCheck("Number")
-	        .appendField("lunghezza");
+	        .appendField(Blockly.Msg.LENGTH);
 		    this.appendDummyInput()
-	        .appendField("materiali");
+	        .appendField(Blockly.Msg.M_MATERIAL);
 		    this.appendDummyInput()
 	        .appendField(new Blockly.FieldDropdown(blocks), "material1");
 		    this.appendDummyInput()
