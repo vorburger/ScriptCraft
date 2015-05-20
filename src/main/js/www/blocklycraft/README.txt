@@ -37,3 +37,4 @@ Useful information:
 - run minecraft server with: java -Xmx1024M -Xms1024M -jar  CanaryMod-1.8.0-1.2.0.jar
 - call 'jsp devoxx' on the console window to start the devoxx4kids scripts
 - if you are not able to destory blocks in Minecraft add the permission 'groupmod permission add visitors canary.world.build'
+- for allowing flying download and add in the plugins the flymod.jar.
